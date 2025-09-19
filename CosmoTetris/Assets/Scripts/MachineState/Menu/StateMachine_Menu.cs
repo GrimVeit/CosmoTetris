@@ -7,14 +7,16 @@ public class StateMachine_Menu : IGlobalStateMachineProvider
 
     private IState _currentState;
 
-    public StateMachine_Menu()
+    public StateMachine_Menu(UIMainMenuRoot sceneRoot)
     {
-
+        states[typeof(MainState_Menu)] = new MainState_Menu(this, sceneRoot);
+        states[typeof(SettingsState_Menu)] = new SettingsState_Menu(this, sceneRoot);
+        states[typeof(GuideState_Menu)] = new GuideState_Menu(this, sceneRoot);
     }
 
     public void Initialize()
     {
-
+        SetState(GetState<MainState_Menu>());
     }
 
     public void Dispose()

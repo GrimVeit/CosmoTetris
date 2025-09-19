@@ -15,6 +15,8 @@ public class MenuEntryPoint : MonoBehaviour
     private ParticleEffectPresenter particleEffectPresenter;
     private SoundPresenter soundPresenter;
 
+    private StateMachine_Menu stateMachine;
+
     public void Run(UIRootView uIRootView)
     {
         sceneRoot = menuRootPrefab;
@@ -24,15 +26,13 @@ public class MenuEntryPoint : MonoBehaviour
         viewContainer = sceneRoot.GetComponent<ViewContainer>();
         viewContainer.Initialize();
 
-        soundPresenter = new SoundPresenter
-                    (new SoundModel(sounds.sounds, PlayerPrefsKeys.IS_MUTE_SOUNDS),
-                    viewContainer.GetView<SoundView>());
+        soundPresenter = new SoundPresenter(new SoundModel(sounds.sounds, PlayerPrefsKeys.IS_MUTE_SOUNDS), viewContainer.GetView<SoundView>());
 
-        particleEffectPresenter = new ParticleEffectPresenter
-            (new ParticleEffectModel(),
-            viewContainer.GetView<ParticleEffectView>());
+        particleEffectPresenter = new ParticleEffectPresenter (new ParticleEffectModel(), viewContainer.GetView<ParticleEffectView>());
 
         bankPresenter = new BankPresenter(new BankModel(), viewContainer.GetView<BankView>());
+
+        stateMachine = new StateMachine_Menu(sceneRoot);
 
         sceneRoot.SetSoundProvider(soundPresenter);
         sceneRoot.Activate();
@@ -43,6 +43,8 @@ public class MenuEntryPoint : MonoBehaviour
         particleEffectPresenter.Initialize();
         sceneRoot.Initialize();
         bankPresenter.Initialize();
+
+        stateMachine.Initialize();
     }
 
     private void ActivateEvents()
@@ -79,6 +81,8 @@ public class MenuEntryPoint : MonoBehaviour
         sceneRoot?.Dispose();
         particleEffectPresenter?.Dispose();
         bankPresenter?.Dispose();
+
+        stateMachine?.Dispose();
     }
 
     private void OnDestroy()
