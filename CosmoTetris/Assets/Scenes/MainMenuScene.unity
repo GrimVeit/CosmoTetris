@@ -4444,7 +4444,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e666cbe599be34184617436dfdf49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percent: 0
+  sliderBlocks:
+  - imageBlock: {fileID: 310586624}
+    spriteActive: {fileID: 21300000, guid: ef86465fb9dcd594196ac0a11fab3d51, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 7
+  - imageBlock: {fileID: 2020811619}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 14
+  - imageBlock: {fileID: 1138684464}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 21
+  - imageBlock: {fileID: 151597523}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 28
+  - imageBlock: {fileID: 940200477}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 36
+  - imageBlock: {fileID: 1940461565}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 42
+  - imageBlock: {fileID: 1075926915}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 49
+  - imageBlock: {fileID: 80133791}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 56
+  - imageBlock: {fileID: 1668613032}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 64
+  - imageBlock: {fileID: 736303887}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 71
+  - imageBlock: {fileID: 1836399312}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 78
+  - imageBlock: {fileID: 150857010}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 85
+  - imageBlock: {fileID: 1539470214}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 92
+  - imageBlock: {fileID: 1643439235}
+    spriteActive: {fileID: 21300000, guid: 27f1a6f82f6e182439e6949c1763e95a, type: 3}
+    spriteInactive: {fileID: 21300000, guid: 72ce97ab1cb807743b9499d965c68b27, type: 3}
+    percentValue: 100
+  tweenDuration: 0.2
   rectTransform: {fileID: 1667258876}
 --- !u!1 &1668613030
 GameObject:

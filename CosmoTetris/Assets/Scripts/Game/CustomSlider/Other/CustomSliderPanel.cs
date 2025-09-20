@@ -29,20 +29,46 @@ public class CustomSliderPanel : MonoBehaviour, IPointerDownHandler, IDragHandle
     {
         float percent = GetPercent(eventData);
 
+        Debug.Log(percent);
+
         int closestIndex = FindClosestBlock(percent);
 
-        if(closestIndex != activeBlockIndex)
+        Debug.Log(closestIndex);
+
+        if (closestIndex != activeBlockIndex)
         {
             activeBlockIndex = closestIndex;
-            //Up
+            UpdateVisual();
+
+            if (isClick)
+                AnimateValue(sliderBlocks[activeBlockIndex].percentValue);
+            else
+                SetValueInstant(sliderBlocks[activeBlockIndex].percentValue);
+
         }
+    }
+
+    private void AnimateValue(float targetPercent)
+    {
+        valueTween?.Kill();
+
+        valueTween = DOTween.To(() => currentPercent, x => currentPercent = x, targetPercent, tweenDuration).OnUpdate(() =>
+        {
+            float volume = currentPercent / 100f;
+        });
+    }
+
+    private void SetValueInstant(float targetPercent)
+    {
+        currentPercent = targetPercent;
+
+        float volume = currentPercent / 100f;
     }
 
     private float GetPercent(PointerEventData eventData)
     {
-        Vector2 localPoint;
 
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, eventData.position, eventData.pressEventCamera, out localPoint))
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, eventData.position, eventData.pressEventCamera, out Vector2 localPoint))
             return 0;
 
         float halfWidth = rectTransform.rect.width / 2f;
@@ -72,14 +98,17 @@ public class CustomSliderPanel : MonoBehaviour, IPointerDownHandler, IDragHandle
     {
         for (int i = 0; i < sliderBlocks.Length; i++)
         {
-            //sliderBlocks[i].imageBlock.
+            sliderBlocks[i].imageBlock.sprite = i <= activeBlockIndex ? sliderBlocks[i].spriteActive : sliderBlocks[i].spriteInactive;
         }
     }
 }
 
+[System.Serializable]
 public class SliderBlock
 {
     public Image imageBlock;
+    public Sprite spriteActive;
+    public Sprite spriteInactive;
 
     [Range(0, 100)]
     public float percentValue;
