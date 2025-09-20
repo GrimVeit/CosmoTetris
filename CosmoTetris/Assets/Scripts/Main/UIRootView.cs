@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIRootView : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
-    [SerializeField] private List<MovePanel> loadScreens = new List<MovePanel>();
+    [SerializeField] private List<MoveLoadingPanel> loadScreens = new List<MoveLoadingPanel>();
     [SerializeField] private Transform uiSceneContainer;
     public IEnumerator ShowLoadingScreen(int index)
     {

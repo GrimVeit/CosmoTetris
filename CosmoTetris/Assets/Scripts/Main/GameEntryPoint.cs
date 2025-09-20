@@ -43,6 +43,9 @@ public class GameEntryPoint
     {
         yield return rootView.ShowLoadingScreen(0);
 
+
+        yield return new WaitForSeconds(0.5f);
+
         yield return LoadScene(Scenes.BOOT);
         yield return LoadScene(Scenes.MAIN_MENU);
 
@@ -51,6 +54,8 @@ public class GameEntryPoint
         var sceneEntryPoint = Object.FindObjectOfType<MenuEntryPoint>();
 
         sceneEntryPoint.Run(rootView);
+
+        yield return new WaitForSeconds(0.3f);
 
         yield return rootView.HideLoadingScreen(0);
     }
